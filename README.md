@@ -1,2 +1,4 @@
 # Hashcode-2017
-Test
+
+TBA Corp github for the google #Hashcode 2017
+g.co/hashcode

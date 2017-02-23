@@ -27,6 +27,7 @@ class Program:
 
     def calculateGains(self):
         self.gains = {}
-        for v in videos:
-            for (endpoint, req) in videos.requests:
-                for ()
+        for videoID in videos:
+            for (endpointID, req) in videoID.requests:
+                for (cacheID:latency) in endpoint.latency:
+                    self.gains.update({(endpointID, videoID, cacheID):videos[videoID].size*req*(endpoints[endpointID].dataCenterLatency-latency)})

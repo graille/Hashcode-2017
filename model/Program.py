@@ -4,6 +4,8 @@ from class.Endpoint import *
 from class.Video import *
 
 
+import operator
+
 class Program:
     def __init__(self):
         self.caches = []
@@ -26,8 +28,10 @@ class Program:
 
 
     def calculateGains(self):
-        self.gains = {}
+        self.gains = []
         for videoID in videos:
             for (endpointID, req) in videoID.requests:
                 for (cacheID:latency) in endpoint.latency:
-                    self.gains.update({(endpointID, videoID, cacheID):videos[videoID].size*req*(endpoints[endpointID].dataCenterLatency-latency)})
+                    self.gains.append(((endpointID, videoID, cacheID),videos[videoID].size*req*(endpoints[endpointID].dataCenterLatency-latency)))
+
+        self.gains.sort(key=operator.itemgetter(1))

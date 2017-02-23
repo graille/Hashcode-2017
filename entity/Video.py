@@ -4,7 +4,5 @@ class Video:
     def __init__(self, id, size = None, requests = {}):
         self.id = id
         self.size = size
-
-        self.requests = requests #dict : endpoint:req
-
-        self.cache = {} #dict
+        self.requests = requests
+        self.cache = {}

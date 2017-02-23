@@ -38,11 +38,11 @@ with open(fileName, "r") as file:
         v = Video(k)
         _program.addVideos(v)
 
-    for k in range(_program.nbCaches):
+    for k in range(_program.nbEndpoints):
         e = Endpoint(k)
         _program.addEndpoint(e)
 
-    for k in range(_program.nbEndpoints):
+    for k in range(_program.nbCaches):
         c = Cache(k, {}, {})
         _program.addCache(c)
 
@@ -68,8 +68,8 @@ with open(fileName, "r") as file:
         elts = line.split(' ')
 
         if len(elts) == 3:
-            _program.videos[int(elts[0])].requests[int(elts[1])] = int(elts[3])
-            _program.endpoints[int(elts[1])].requests[int(elts[0])] = int(elts[3])
+            _program.videos[int(elts[0])].requests[int(elts[1])] = int(elts[2])
+            _program.endpoints[int(elts[1])].requests[int(elts[0])] = int(elts[2])
         elif len(elts) == 2:
             _program.endpoints[numeroEndpoint].dataCenterLatency = int(elts[0])
 

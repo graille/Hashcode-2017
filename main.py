@@ -43,7 +43,7 @@ with open(fileName, "r") as file:
         _program.addEndpoint(e)
 
     for k in range(_program.nbCaches):
-        c = Cache(k, {}, {})
+        c = Cache(k, _program.cacheCapacity, {})
         _program.addCache(c)
 
     nbRequest = int(elts[2])

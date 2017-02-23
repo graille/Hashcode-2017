@@ -27,4 +27,6 @@ class Program:
 
     def calculateGains(self):
         self.gains = {}
-        for v 
+        for v in videos:
+            for (endpoint, req) in videos.requests:
+                for ()

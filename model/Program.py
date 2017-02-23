@@ -27,6 +27,17 @@ class Program:
         self.videos.append(video)
 
 
+
+    def run(self):
+        print("Running...")
+        self.calculateGains()
+        print("Runned ! \n Populating cache...")
+        self.solve()
+        print("Sonved!\n Writing solutions....")
+        self.writeSolutionFile()
+        print("done !")
+
+
     def calculateGains(self):
         self.gains = []
         for videoID in videos:
@@ -36,10 +47,10 @@ class Program:
 
         self.gains.sort(reverse=true, key=operator.itemgetter(1))
 
-    def solve(this):
+    def solve(self):
         #solution[cache_id(int)] = [video1, video5, ...(int)]
         self.solution = {}
-    
+
         # List is sorted
         for element in self.gains:
             id_endpoint, id_video, id_cache = element[0]
@@ -50,12 +61,12 @@ class Program:
             # Si pas de place, prendre le prochain libre
             else:
                 pass
-    
-    def writeSolutionFile(this):
+
+    def writeSolutionFile(self):
         nCacheUsed = len(self.solution)
         with open(fileName, "a") as f:
             f.write(str(nCacheUsed)+'\n')
-            
+
             for cache_id in self.solution.keys():
                 line = str(cache_id)+' '
                 for video_id in self.solution[cache_id]:

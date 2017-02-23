@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class Program:
     def __init__(self):
         self.caches = []
@@ -5,9 +7,9 @@ class Program:
         self.videos = []
 
         self.nbVideos = 0
-        self.nbCache = 0
-        self.nbEndpoint = 0
-        self.cacheCapacity = float(inf)
+        self.nbCaches = 0
+        self.nbEndpoints = 0
+        self.cacheCapacity = float("inf")
 
     def addCache(self, cache):
         self.caches.append(cache)

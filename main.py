@@ -16,6 +16,8 @@ from model.Program import *
 
 fileName = sys.argv[1]
 
+_program = Program()
+
 with open(fileName, "r") as file:
     lines = file.readlines()
     nb = 0
@@ -23,7 +25,8 @@ with open(fileName, "r") as file:
         print(line)
         if nb == 0:
             elts = line.split(' ')
-
+            _program.nbVideos = int(elts[0])
+            _program.nbEndpoints = int(elts[1])
         if nb == 1:
             pass
 

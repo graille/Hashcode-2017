@@ -3,4 +3,5 @@ class Endpoint:
         self.id = id
         self.dataCenterLatency = dataCenterLatency
 
-        self.caches = {} # dict of : cache:latency (ms)
+        self.latency = [] # item i contains latency of i cache
+        self.requests = [] #item i contains nb of requets for video i

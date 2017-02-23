@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+from class.Cache import *
+from class.Endpoint import *
+from class.Video import *
+
 
 class Program:
     def __init__(self):
@@ -19,3 +23,8 @@ class Program:
 
     def addVideos(self, video):
         self.videos.append(video)
+
+
+    def calculateGains(self):
+        self.gains = {}
+        for v 

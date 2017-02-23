@@ -3,6 +3,7 @@
 
 import sys
 import os
+import numpy as np
 
 # Set the syspath
 f_name = "main.py"
@@ -31,5 +32,3 @@ with open(fileName, "r") as file:
             pass
 
         nb += 1
-
-

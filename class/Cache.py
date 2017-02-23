@@ -5,6 +5,6 @@ class Cache:
         self.id = id
         self.capacity = capacity
 
-        self.latency = latency #item i contains latency of cache i
+        self.latency = latency #dict
 
-        self.videos =  #store the id of videos stored in the cache
+        self.videos =  #dict

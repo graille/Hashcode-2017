@@ -6,6 +6,6 @@ class Video:
         self.id = id
         self.size = size
 
-        self.requests = requests #item i contains requests at endpoint i
+        self.requests = requests #dict
 
-        self.cache[] #contains the id of caches where the video will be stored
+        self.cache = {} #dict

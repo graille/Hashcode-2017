@@ -22,13 +22,20 @@ _program = Program()
 with open(fileName, "r") as file:
     lines = file.readlines()
     nb = 0
+    nbRequest = -1
     for line in lines:
-        print(line)
+        line = line.rstrip('\n')
+        elts = line.split(' ')
         if nb == 0:
-            elts = line.split(' ')
             _program.nbVideos = int(elts[0])
             _program.nbEndpoints = int(elts[1])
+            _program.nbCaches = int(elts[3])
+            _program.cacheCapacity = int(elts[4])
+
+            nbRequest = int(elts[2])
         if nb == 1:
+            for elt in elts:
+
             pass
 
         nb += 1

@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
-
-
 class Endpoint:
-    def __init__(self, id, dataCenterLatency, latency, requests):
+    def __init__(self, id, dataCenterLatency = None, latency = None, requests = None):
         self.id = id
         self.dataCenterLatency = dataCenterLatency
 

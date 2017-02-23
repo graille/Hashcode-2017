@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-
 class Video:
-    def __init__(self, id, size, requests):
+    def __init__(self, id, size = None, requests = {}):
         self.id = id
         self.size = size
 

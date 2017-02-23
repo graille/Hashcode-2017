@@ -1,7 +1,11 @@
+# -*- coding: utf-8 -*-
+
+
+
 class Endpoint:
-    def __init__(self, id, dataCenterLatency):
+    def __init__(self, id, dataCenterLatency, latency, requests):
         self.id = id
         self.dataCenterLatency = dataCenterLatency
 
-        self.latency = [] # item i contains latency of i cache
-        self.requests = [] #item i contains nb of requets for video i
+        self.latency = latency # item i contains latency of i cache
+        self.requests = requests #item i contains nb of requets for video i

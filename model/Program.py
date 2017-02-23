@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from class.Cache import *
-from class.Endpoint import *
-from class.Video import *
+from entity.Cache import *
+from entity.Endpoint import *
+from entity.Video import *
 
 
 import operator
@@ -42,7 +42,7 @@ class Program:
         self.gains = []
         for videoID in videos:
             for (endpointID, req) in videoID.requests:
-                for (cacheID:latency) in endpoint.latency:
+                for (cacheID.latency) in endpoint.latency:
                     self.gains.append(((endpointID, videoID, cacheID),videos[videoID].size*req*(endpoints[endpointID].dataCenterLatency-latency)))
 
         self.gains.sort(reverse=true, key=operator.itemgetter(1))

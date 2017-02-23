@@ -19,7 +19,6 @@ from entity.Cache import *
 from entity.Endpoint import *
 
 fileName = sys.argv[1]
-
 _program = Program()
 
 with open(fileName, "r") as file:
@@ -62,29 +61,31 @@ with open(fileName, "r") as file:
 
     # LINES > 1
     numeroEndpoint = 0
-    for k in []:
+    while True:
         line = file.readline()
 
         line = line.rstrip('\n')
         elts = line.split(' ')
 
-        _program.endpoints[numeroEndpoint].dataCenterLatency = int(elts[0])
+        if len(elts) == 3:
+            _program.videos[int(elts[0])].requests[int(elts[1])] = int(elts[3])
+            _program.endpoints[int(elts[1])].requests[int(elts[0])] = int(elts[3])
+        elif len(elts) == 2:
+            _program.endpoints[numeroEndpoint].dataCenterLatency = int(elts[0])
 
-        for j in range(int(elts[1])):
-            line = file.readline()
+            for j in range(int(elts[1])):
+                line = file.readline()
 
-            line = line.rstrip('\n')
-            elts = line.split(' ')
+                line = line.rstrip('\n')
+                elts = line.split(' ')
 
-            # Update latency
-            _program.endpoints[numeroEndpoint].latency[int(elts[0])] = int(elts[1])
-            _program.caches[int(elts[0])].latency[numeroEndpoint] = int(elts[1])
+                # Update latency
+                _program.endpoints[numeroEndpoint].latency[int(elts[0])] = int(elts[1])
+                _program.caches[int(elts[0])].latency[numeroEndpoint] = int(elts[1])
 
+            numeroEndpoint += 1
 
+        else:
+            break
 
-
-
-
-
-
-    nb += 1
+_program.run()

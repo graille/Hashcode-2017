@@ -35,3 +35,29 @@ class Program:
                     self.gains.append(((endpointID, videoID, cacheID),videos[videoID].size*req*(endpoints[endpointID].dataCenterLatency-latency)))
 
         self.gains.sort(reverse=true, key=operator.itemgetter(1))
+
+    def solve(this):
+        #solution[cache_id(int)] = [video1, video5, ...(int)]
+        self.solution = {}
+    
+        # List is sorted
+        for element in self.gains:
+            id_endpoint, id_video, id_cache = element[0]
+            taille_video = this.videos[id_video].size
+            if this.cache[id_cache].canAdd(taille_video):
+                self.solution[id_cache].append(id_video)
+                self.solution[id_cache].emptySpace -= taille_video
+            # Si pas de place, prendre le prochain libre
+            else:
+                pass
+    
+    def writeSolutionFile(this):
+        nCacheUsed = len(self.solution)
+        with open(fileName, "a") as f:
+            f.write(str(nCacheUsed)+'\n')
+            
+            for cache_id in self.solution.keys():
+                line = str(cache_id)+' '
+                for video_id in self.solution[cache_id]:
+                    line += str(video_id)+' '
+                f.write(line[:-1]+'\n')

@@ -34,4 +34,4 @@ class Program:
                 for (cacheID:latency) in endpoint.latency:
                     self.gains.append(((endpointID, videoID, cacheID),videos[videoID].size*req*(endpoints[endpointID].dataCenterLatency-latency)))
 
-        self.gains.sort(key=operator.itemgetter(1))
+        self.gains.sort(reverse=true, key=operator.itemgetter(1))

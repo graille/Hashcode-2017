@@ -49,7 +49,7 @@ class Program:
 
     def solve(self):
         #solution[cache_id(int)] = [video1, video5, ...(int)]
-        self.solution = {}
+        self.solution = {cacheId:[] for cacheId in range(len(caches))}
 
         # List is sorted
         for element in self.gains:
@@ -68,7 +68,8 @@ class Program:
             f.write(str(nCacheUsed)+'\n')
 
             for cache_id in self.solution.keys():
-                line = str(cache_id)+' '
-                for video_id in self.solution[cache_id]:
-                    line += str(video_id) + ' '
-                f.write(line[:-1]+'\n')
+                if self.solution[cache_id] != []:
+                    line = str(cache_id)+' '
+                    for video_id in self.solution[cache_id]:
+                        line += str(video_id) + ' '
+                    f.write(line[:-1]+'\n')

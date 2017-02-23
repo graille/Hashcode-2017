@@ -49,14 +49,14 @@ class Program:
 
     def solve(self):
         #solution[cache_id(int)] = [video1, video5, ...(int)]
-        self.solution = {cacheId:[] for cacheId in range(len(caches))}
+        self.solution = {cacheId:[] for cacheId in range(len(self.caches))}
 
         # List is sorted
         for element in self.gains:
             id_endpoint, id_video, id_cache = element[0]
             taille_video = self.videos[id_video].size
             if self.caches[id_cache].canAdd(taille_video):
-                self.solution[id_cache] = id_video
+                self.solution[id_cache].append(id_video)
                 self.caches[id_cache].emptySpace -= taille_video
             # Si pas de place, prendre le prochain libre
             else:
